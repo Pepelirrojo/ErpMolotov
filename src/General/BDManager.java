@@ -8,7 +8,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 
 public class BDManager {
-	private String db = "managerp_db";
+	private String db = "managerp_bd_2";
 	private String login = "root";
 	private String pwd = "";
 	private String url = "jdbc:mysql://localhost/" + db

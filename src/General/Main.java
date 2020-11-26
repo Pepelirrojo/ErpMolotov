@@ -5,7 +5,6 @@ import Vistas.Login;
 import Vistas.Usuario;
 
 public class Main {
-
 	public static void main(String[] args) {
 		Modelo miModelo = new Modelo();
 		Controlador miControlador = new Controlador(miModelo);
@@ -17,5 +16,4 @@ public class Main {
 		miControlador.setFinanzas(miFinanzas);
 		miLogin.setVisible(true);
 	}
-
 }
