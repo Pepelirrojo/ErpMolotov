@@ -14,7 +14,7 @@ public class Usuario extends JFrame {
 	public Usuario(Controlador miControlador) {
 		this.miControlador = miControlador;
 		setTitle("MolotovERP - Usuario");
-		setBounds(100, 100, 450, 300);
+		setBounds(600, 200, 450, 300);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		getContentPane().setLayout(null);
 
@@ -35,7 +35,6 @@ public class Usuario extends JFrame {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				miControlador.changeWindow("usuario", "finanzas");
-
 			}
 		});
 	}

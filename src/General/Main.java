@@ -1,8 +1,6 @@
 package General;
 
-import Vistas.Finanzas;
-import Vistas.Login;
-import Vistas.Usuario;
+import Vistas.*;
 
 public class Main {
 	public static void main(String[] args) {
@@ -11,6 +9,8 @@ public class Main {
 		Login miLogin = new Login(miControlador);
 		Usuario miUsuario = new Usuario(miControlador);
 		Finanzas miFinanzas = new Finanzas(miControlador);
+		AddFinanza miAddFinanza = new AddFinanza(miControlador);
+		miControlador.setAddFinanza(miAddFinanza);
 		miControlador.setLogin(miLogin);
 		miControlador.setUsuario(miUsuario);
 		miControlador.setFinanzas(miFinanzas);

@@ -1,10 +1,12 @@
 package General;
 
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.HashMap;
 
 import javax.swing.JFrame;
 
+import Vistas.AddFinanza;
 import Vistas.Finanzas;
 import Vistas.Login;
 import Vistas.Usuario;
@@ -25,7 +27,11 @@ public class Controlador {
 	public void setUsuario(Usuario usuario) {
 		misPantallas.put("usuario", usuario);
 	}
-	
+
+	public void setAddFinanza(AddFinanza miAddFinanza) {
+		misPantallas.put("addFinanzas", miAddFinanza);
+	}
+
 	public void setFinanzas(Finanzas finanzas) {
 		misPantallas.put("finanzas", finanzas);
 	}
@@ -42,4 +48,13 @@ public class Controlador {
 		}
 		return exito;
 	}
+
+	public ArrayList<Object[]> showDbInTable() {
+		return miModelo.getDataToTable();
+	}
+
+	public void sendData(String[] dataForm) {
+		miModelo.sendDataForm(dataForm);
+	}
+
 }

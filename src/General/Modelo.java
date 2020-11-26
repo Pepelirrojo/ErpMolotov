@@ -1,6 +1,7 @@
 package General;
 
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 public class Modelo {
 	private BDManager miBdManager;
@@ -15,5 +16,13 @@ public class Modelo {
 			exito = true;
 		}
 		return exito;
+	}
+
+	public ArrayList<Object[]> getDataToTable() {
+		return miBdManager.getDbDataToTable();
+	}
+
+	public void sendDataForm(String[] dataForm) {
+		miBdManager.insertFinanza(dataForm);
 	}
 }
