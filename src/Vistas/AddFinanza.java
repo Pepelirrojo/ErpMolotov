@@ -51,6 +51,9 @@ public class AddFinanza extends JFrame {
 		setBounds(100, 100, 1344, 820);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		getContentPane().setLayout(null);
+		
+		JButton btnCerrarSesion;
+		
 
 		lblFactura = new JLabel("");
 		lblFactura.setIcon(new ImageIcon(AddFinanza.class.getResource("/design/a\u00F1adirProductoOServicio.PNG")));
@@ -154,6 +157,22 @@ public class AddFinanza extends JFrame {
 		btnNuevaFactura.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				miControlador.changeWindow("addFinanzas", "addFinanzas");
+			}
+		});
+		
+		JLabel lblUsuario = new JLabel("");
+		lblUsuario.setIcon(new ImageIcon(AddFinanza.class.getResource("/design/lblusuario.PNG")));
+		lblUsuario.setBounds(963, 11, 337, 93);
+		getContentPane().add(lblUsuario);
+		
+		btnCerrarSesion = new JButton("");
+		btnCerrarSesion.setIcon(new ImageIcon(AddFinanza.class.getResource("/design/btnCerrarSesion.PNG")));
+		btnCerrarSesion.setBounds(1193, 65, 93, 35);
+		getContentPane().add(btnCerrarSesion);
+		btnCerrarSesion.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				miControlador.changeWindow("addFinanzas", "login");
 			}
 		});
 

@@ -29,6 +29,12 @@ public class Finanzas extends JFrame {
 	private JLabel lblSubTitulo;
 	private JLabel lblTituloERP;
 	private JButton btnCerrarSesion;
+	private JLabel lblID;
+	private JLabel lblFecha;
+	private JLabel lblNewLabel;
+	private JLabel lblDetallesFinancieros;
+	private JLabel lblTituloDescrip;
+	private JLabel lblFacturaDescrip;
 
 	public Finanzas(Controlador miControlador) {
 		this.miControlador = miControlador;
@@ -37,6 +43,59 @@ public class Finanzas extends JFrame {
 		setBounds(600, 200, 1344, 819);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		getContentPane().setLayout(null);
+												
+												lblFacturaDescrip = new JLabel("");
+												lblFacturaDescrip.setIcon(new ImageIcon(Finanzas.class.getResource("/design/tablaFacturaDescrip.PNG")));
+												lblFacturaDescrip.setBounds(1026, 270, 180, 14);
+												getContentPane().add(lblFacturaDescrip);
+												
+												JButton btnRefresh = new JButton("");
+												btnRefresh.setIcon(new ImageIcon(Finanzas.class.getResource("/design/btnActualizar.PNG")));
+												btnRefresh.setBounds(667, 180, 233, 39);
+												getContentPane().add(btnRefresh);
+												btnRefresh.addActionListener(new ActionListener() {
+													public void actionPerformed(ActionEvent e) {
+														showTable();
+													}
+												});
+												
+												lblTituloDescrip = new JLabel("");
+												lblTituloDescrip.setIcon(new ImageIcon(Finanzas.class.getResource("/design/tablaTituloDescrp.PNG")));
+												lblTituloDescrip.setBounds(903, 270, 120, 14);
+												getContentPane().add(lblTituloDescrip);
+												
+												lblDetallesFinancieros = new JLabel("");
+												lblDetallesFinancieros.setIcon(new ImageIcon(Finanzas.class.getResource("/design/tablaDetallesFinan.PNG")));
+												lblDetallesFinancieros.setBounds(600, 270, 304, 14);
+												getContentPane().add(lblDetallesFinancieros);
+												
+												lblNewLabel = new JLabel("");
+												lblNewLabel.setIcon(new ImageIcon(Finanzas.class.getResource("/design/tablaCliente.PNG")));
+												lblNewLabel.setBounds(535, 270, 60, 14);
+												getContentPane().add(lblNewLabel);
+												
+												lblFecha = new JLabel("New label");
+												lblFecha.setIcon(new ImageIcon(Finanzas.class.getResource("/design/tablaFecha.PNG")));
+												lblFecha.setBounds(410, 270, 120, 14);
+												getContentPane().add(lblFecha);
+										
+												table = new JTable();
+												table.setBounds(382, 306, 824, 279);
+												getContentPane().add(table);
+										
+										lblID = new JLabel("");
+										lblID.setIcon(new ImageIcon(Finanzas.class.getResource("/design/tablaId.PNG")));
+										lblID.setBounds(382, 270, 26, 14);
+										getContentPane().add(lblID);
+								
+								// FONDOS DEL BODY
+								
+										lblFondoBlanco = new JLabel("");
+										lblFondoBlanco.setAutoscrolls(true);
+										lblFondoBlanco.setBackground(new Color(255, 255, 255));
+										lblFondoBlanco.setBounds(233, 114, 1095, 667);
+										getContentPane().add(lblFondoBlanco);
+										lblFondoBlanco.setIcon(new ImageIcon(Finanzas.class.getResource("/design/fondoBlanco.PNG")));
 								
 								btnCerrarSesion = new JButton("");
 								btnCerrarSesion.setIcon(new ImageIcon(Finanzas.class.getResource("/design/btnCerrarSesion.PNG")));
@@ -100,19 +159,6 @@ public class Finanzas extends JFrame {
 							}
 						});
 		
-				table = new JTable();
-				table.setBounds(243, 172, 824, 279);
-				getContentPane().add(table);
-		
-		JButton btnRefresh = new JButton("Refresh");
-		btnRefresh.setBounds(507, 491, 85, 21);
-		getContentPane().add(btnRefresh);
-		btnRefresh.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				showTable();
-			}
-		});
-		
 		addWindowListener(new WindowListener() {
 			public void windowOpened(WindowEvent e) {
 				showTable();
@@ -172,15 +218,6 @@ public class Finanzas extends JFrame {
 		getContentPane().add(lblTituloClientes);
 		lblTituloClientes.setIcon(new ImageIcon(Finanzas.class.getResource("/design/tituloClientes.PNG")));
 		getContentPane().add(lblTituloClientes);
-		
-		// FONDOS DEL BODY
-		
-				lblFondoBlanco = new JLabel("");
-				lblFondoBlanco.setAutoscrolls(true);
-				lblFondoBlanco.setBackground(new Color(255, 255, 255));
-				lblFondoBlanco.setBounds(233, 114, 1095, 667);
-				getContentPane().add(lblFondoBlanco);
-				lblFondoBlanco.setIcon(new ImageIcon(Finanzas.class.getResource("/design/fondoBlanco.PNG")));
 
 
 				lblColumnaIzq = new JLabel("");
